@@ -1,0 +1,46 @@
+{
+  "name": "js-examples",
+  "version": "1.0.0",
+  "description": "A comprehensive JavaScript learning monorepo with practical examples",
+  "private": true,
+  "workspaces": [
+    "projects/*"
+  ],
+  "scripts": {
+    "install-all": "npm install && npm run install:projects",
+    "install:projects": "npm install --workspaces",
+    "build": "npm run build --workspaces",
+    "dev": "npm run dev --workspaces",
+    "start": "npm run start --workspaces",
+    "clean": "npm run clean --workspaces && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.0",
+    "concurrently": "^8.2.0"
+  },
+  "dependencies": {
+    "express": "^4.18.0",
+    "sqlite3": "^5.1.0",
+    "ws": "^8.14.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dunamismax/js-examples.git"
+  },
+  "keywords": [
+    "javascript",
+    "learning",
+    "tutorial",
+    "examples",
+    "vanilla-js",
+    "nodejs",
+    "express",
+    "sqlite",
+    "esbuild"
+  ],
+  "author": "JavaScript Learning Community",
+  "license": "MIT"
+}

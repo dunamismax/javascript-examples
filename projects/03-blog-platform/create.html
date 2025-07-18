@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post - Blog Platform</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <div class="header-content">
+                <h1>📝 JavaScript Blog Platform</h1>
+                
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/create" class="nav-link active">Write Post</a>
+                    <a href="/#learning" class="nav-link">Learning Guide</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="create-post-section">
+                <div class="section-header">
+                    <h2>✍️ Create New Post</h2>
+                    <p>Share your thoughts and insights with the community</p>
+                </div>
+
+                <!-- Create Post Form -->
+                <form id="createPostForm" class="create-post-form">
+                    <div class="form-group">
+                        <label for="postTitle">Post Title:</label>
+                        <input type="text" id="postTitle" name="title" required 
+                               minlength="3" maxlength="200"
+                               placeholder="Enter an engaging title for your post">
+                        <div class="input-help">
+                            A good title is clear, descriptive, and engaging (3-200 characters)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postAuthor">Author Name:</label>
+                        <input type="text" id="postAuthor" name="author" required 
+                               maxlength="50"
+                               placeholder="Your name or username">
+                        <div class="input-help">
+                            This will be displayed as the post author
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postContent">Post Content:</label>
+                        <textarea id="postContent" name="content" required 
+                                  minlength="10" rows="12"
+                                  placeholder="Write your post content here... You can use basic HTML tags like &lt;p&gt;, &lt;strong&gt;, &lt;em&gt;, &lt;ul&gt;, &lt;ol&gt;, etc."></textarea>
+                        <div class="content-help">
+                            <div class="char-counter">
+                                <span id="contentCharCount">0</span> characters
+                            </div>
+                            <div class="formatting-help">
+                                💡 <strong>Formatting Tips:</strong> You can use HTML tags like &lt;p&gt;, &lt;strong&gt;, &lt;em&gt;, &lt;ul&gt;, &lt;li&gt; for formatting
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Preview -->
+                    <div class="form-group">
+                        <label>Live Preview:</label>
+                        <div id="contentPreview" class="content-preview">
+                            <em>Start typing to see a preview of your post...</em>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="submitBtn">
+                            <span class="btn-text">Publish Post</span>
+                            <span class="btn-loading hidden">Publishing...</span>
+                        </button>
+                        <button type="reset" class="btn btn-outline">Clear Form</button>
+                        <a href="/" class="btn btn-secondary">Cancel</a>
+                    </div>
+                </form>
+
+                <!-- Success Message -->
+                <div id="successMessage" class="success-message hidden">
+                    <div class="success-icon">✅</div>
+                    <h3>Post Published Successfully!</h3>
+                    <p>Your post has been published and is now visible to all readers.</p>
+                    <div class="success-actions">
+                        <button id="viewPostBtn" class="btn btn-primary">View Post</button>
+                        <a href="/" class="btn btn-secondary">Back to Home</a>
+                        <button id="createAnotherBtn" class="btn btn-outline">Write Another</button>
+                    </div>
+                </div>
+
+                <!-- Error Message -->
+                <div id="errorMessage" class="error-message hidden">
+                    <div class="error-icon">❌</div>
+                    <h3>Failed to Publish Post</h3>
+                    <p id="errorText">There was an error publishing your post. Please try again.</p>
+                    <button id="retryBtn" class="btn btn-primary">Try Again</button>
+                </div>
+            </section>
+
+            <!-- Writing Tips Section -->
+            <section class="writing-tips-section">
+                <h2>✨ Writing Tips</h2>
+                <div class="tips-grid">
+                    <div class="tip-item">
+                        <h4>📝 Craft a Compelling Title</h4>
+                        <p>Your title is the first thing readers see. Make it clear, specific, and engaging. Good titles often ask questions, make bold statements, or promise valuable insights.</p>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h4>🎯 Start Strong</h4>
+                        <p>Hook your readers with an interesting opening. Start with a surprising fact, a thought-provoking question, or a compelling story that relates to your topic.</p>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h4>📖 Structure Your Content</h4>
+                        <p>Use headings, bullet points, and short paragraphs to make your content scannable. Break up long text with lists and examples.</p>
+                    </div>
+                    
+                    <div class="tip-item">
+                        <h4>💭 Add Your Voice</h4>
+                        <p>Share personal experiences, opinions, and insights. Readers connect with authentic, personal content more than generic information.</p>
+                    </div>
+                </div>
+                
+                <div class="html-guide">
+                    <h3>🏷️ Supported HTML Tags</h3>
+                    <div class="html-examples">
+                        <div class="html-example">
+                            <code>&lt;p&gt;Paragraph text&lt;/p&gt;</code>
+                            <span>→ Regular paragraph</span>
+                        </div>
+                        <div class="html-example">
+                            <code>&lt;strong&gt;Bold text&lt;/strong&gt;</code>
+                            <span>→ <strong>Bold text</strong></span>
+                        </div>
+                        <div class="html-example">
+                            <code>&lt;em&gt;Italic text&lt;/em&gt;</code>
+                            <span>→ <em>Italic text</em></span>
+                        </div>
+                        <div class="html-example">
+                            <code>&lt;ul&gt;&lt;li&gt;List item&lt;/li&gt;&lt;/ul&gt;</code>
+                            <span>→ Bullet list</span>
+                        </div>
+                        <div class="html-example">
+                            <code>&lt;ol&gt;&lt;li&gt;Numbered item&lt;/li&gt;&lt;/ol&gt;</code>
+                            <span>→ Numbered list</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/create.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App - JavaScript Learning</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 Todo App</h1>
+            <p class="subtitle">Learn: DOM Manipulation, Event Handling, localStorage</p>
+        </header>
+
+        <main>
+            <section class="todo-input-section">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="todoInput" 
+                        placeholder="What needs to be done?"
+                        class="todo-input"
+                        maxlength="200"
+                    >
+                    <button id="addBtn" class="add-btn" type="button">Add Task</button>
+                </div>
+            </section>
+
+            <section class="todo-filters">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+                <div class="todo-stats">
+                    <span id="todoCount">0 tasks remaining</span>
+                    <button id="clearCompleted" class="clear-btn">Clear Completed</button>
+                </div>
+            </section>
+
+            <section class="todo-list-section">
+                <ul id="todoList" class="todo-list"></ul>
+                <div id="emptyState" class="empty-state">
+                    <p>No tasks yet. Add one above to get started!</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="learning-notes">
+            <h3>🎓 What you'll learn:</h3>
+            <ul>
+                <li><strong>DOM Manipulation:</strong> Creating, modifying, and removing elements</li>
+                <li><strong>Event Handling:</strong> Click events, input events, and event delegation</li>
+                <li><strong>localStorage:</strong> Persisting data in the browser</li>
+                <li><strong>Array Methods:</strong> filter(), map(), find(), and more</li>
+                <li><strong>State Management:</strong> Managing application state in vanilla JS</li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="dist/main.js"></script>
+</body>
+</html>

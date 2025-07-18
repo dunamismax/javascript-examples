@@ -1,0 +1,21 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "A basic todo application demonstrating vanilla JavaScript fundamentals",
+  "main": "index.html",
+  "scripts": {
+    "dev": "esbuild src/js/main.js --bundle --outfile=dist/main.js --servedir=. --watch",
+    "build": "esbuild src/js/main.js --bundle --outfile=dist/main.js --minify",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "javascript",
+    "todo",
+    "localStorage",
+    "DOM",
+    "vanilla-js"
+  ],
+  "devDependencies": {
+    "esbuild": "^0.19.0"
+  }
+}

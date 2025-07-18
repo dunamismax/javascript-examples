@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard - JavaScript Learning</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌤️ Weather Dashboard</h1>
+            <p class="subtitle">Learn: API Integration, Async/Await, Geolocation</p>
+        </header>
+
+        <main>
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="search-container">
+                    <div class="search-input-group">
+                        <input 
+                            type="text" 
+                            id="cityInput" 
+                            placeholder="Enter city name (e.g., London, New York)"
+                            class="city-input"
+                        >
+                        <button id="searchBtn" class="search-btn">Search</button>
+                    </div>
+                    <button id="locationBtn" class="location-btn">📍 Use My Location</button>
+                </div>
+            </section>
+
+            <!-- Loading State -->
+            <section id="loadingState" class="loading-state hidden">
+                <div class="loading-spinner"></div>
+                <p>Loading weather data...</p>
+            </section>
+
+            <!-- Error State -->
+            <section id="errorState" class="error-state hidden">
+                <div class="error-icon">⚠️</div>
+                <h3 id="errorTitle">Oops! Something went wrong</h3>
+                <p id="errorMessage">Please check your internet connection and try again.</p>
+                <button id="retryBtn" class="retry-btn">Try Again</button>
+            </section>
+
+            <!-- Current Weather Display -->
+            <section id="currentWeather" class="current-weather hidden">
+                <div class="weather-header">
+                    <div class="location-info">
+                        <h2 id="locationName">London, UK</h2>
+                        <p id="currentDate">Monday, March 18, 2024</p>
+                    </div>
+                    <div class="weather-icon-main">
+                        <img id="mainWeatherIcon" src="" alt="Weather icon">
+                    </div>
+                </div>
+
+                <div class="weather-main">
+                    <div class="temperature-display">
+                        <span id="currentTemp">22°C</span>
+                        <div class="temp-toggle">
+                            <button id="tempToggle" class="temp-toggle-btn">°F</button>
+                        </div>
+                    </div>
+                    <div class="weather-description">
+                        <h3 id="weatherCondition">Partly Cloudy</h3>
+                        <p id="weatherDescription">Light cloud coverage with occasional sun</p>
+                    </div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Feels like</span>
+                        <span id="feelsLike" class="detail-value">25°C</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Humidity</span>
+                        <span id="humidity" class="detail-value">65%</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Wind Speed</span>
+                        <span id="windSpeed" class="detail-value">12 km/h</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Pressure</span>
+                        <span id="pressure" class="detail-value">1013 hPa</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Visibility</span>
+                        <span id="visibility" class="detail-value">10 km</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">UV Index</span>
+                        <span id="uvIndex" class="detail-value">5</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5-Day Forecast -->
+            <section id="forecast" class="forecast-section hidden">
+                <h3>5-Day Forecast</h3>
+                <div id="forecastContainer" class="forecast-container">
+                    <!-- Forecast items will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Recently Searched Cities -->
+            <section id="recentCities" class="recent-cities hidden">
+                <h3>Recent Searches</h3>
+                <div id="recentCitiesList" class="recent-cities-list">
+                    <!-- Recent cities will be populated by JavaScript -->
+                </div>
+                <button id="clearHistory" class="clear-history-btn">Clear History</button>
+            </section>
+        </main>
+
+        <footer class="learning-notes">
+            <h3>🎓 What you'll learn:</h3>
+            <ul>
+                <li><strong>API Integration:</strong> Making HTTP requests with fetch()</li>
+                <li><strong>Async/Await:</strong> Handling asynchronous operations elegantly</li>
+                <li><strong>Geolocation API:</strong> Getting user's current location</li>
+                <li><strong>Error Handling:</strong> Graceful handling of network and API errors</li>
+                <li><strong>Date/Time Manipulation:</strong> Formatting and displaying dates</li>
+                <li><strong>Dynamic Content:</strong> Creating and updating DOM elements</li>
+                <li><strong>State Management:</strong> Managing loading, error, and success states</li>
+                <li><strong>Local Storage:</strong> Persisting user preferences and history</li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="dist/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Platform - JavaScript Learning</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <div class="header-content">
+                <h1>📝 JavaScript Blog Platform</h1>
+                <p class="subtitle">Learn: Express.js, SQLite, Full-Stack Development</p>
+                
+                <nav class="main-nav">
+                    <a href="/" class="nav-link active">Home</a>
+                    <a href="/create" class="nav-link">Write Post</a>
+                    <a href="#learning" class="nav-link">Learning Guide</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h2>Welcome to the Learning Blog</h2>
+                    <p>A full-stack blogging platform built with Node.js, Express.js, and SQLite. Explore posts, leave comments, and see modern web development in action.</p>
+                    <div class="hero-actions">
+                        <a href="/create" class="btn btn-primary">Write Your First Post</a>
+                        <button id="refreshPosts" class="btn btn-secondary">Refresh Posts</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Loading State -->
+            <section id="loadingState" class="loading-section hidden">
+                <div class="loading-spinner"></div>
+                <p>Loading blog posts...</p>
+            </section>
+
+            <!-- Error State -->
+            <section id="errorState" class="error-section hidden">
+                <div class="error-content">
+                    <div class="error-icon">⚠️</div>
+                    <h3>Unable to Load Posts</h3>
+                    <p id="errorMessage">There was a problem loading the blog posts. Please try again.</p>
+                    <button id="retryBtn" class="btn btn-primary">Try Again</button>
+                </div>
+            </section>
+
+            <!-- Blog Posts List -->
+            <section class="posts-section">
+                <div class="section-header">
+                    <h2>Latest Posts</h2>
+                    <div class="posts-stats">
+                        <span id="postsCount">Loading posts...</span>
+                    </div>
+                </div>
+                
+                <div id="postsContainer" class="posts-container">
+                    <!-- Posts will be populated by JavaScript -->
+                </div>
+
+                <!-- Empty State -->
+                <div id="emptyState" class="empty-state hidden">
+                    <div class="empty-icon">📄</div>
+                    <h3>No Posts Yet</h3>
+                    <p>Be the first to share your thoughts! Create a new blog post to get started.</p>
+                    <a href="/create" class="btn btn-primary">Create First Post</a>
+                </div>
+            </section>
+
+            <!-- API Demo Section -->
+            <section class="api-demo-section">
+                <h2>🔧 API Demo</h2>
+                <p>Test the blog platform's RESTful API directly from the browser:</p>
+                
+                <div class="api-tests">
+                    <div class="api-test">
+                        <h4>GET /api/posts</h4>
+                        <p>Fetch all published posts</p>
+                        <button onclick="testGetPosts()" class="btn btn-small">Test API</button>
+                        <pre id="apiResult1" class="api-result"></pre>
+                    </div>
+                    
+                    <div class="api-test">
+                        <h4>POST /api/posts</h4>
+                        <p>Create a new blog post</p>
+                        <div class="api-form">
+                            <input type="text" id="apiTitle" placeholder="Post title">
+                            <input type="text" id="apiAuthor" placeholder="Author name">
+                            <textarea id="apiContent" placeholder="Post content"></textarea>
+                            <button onclick="testCreatePost()" class="btn btn-small">Create Post</button>
+                        </div>
+                        <pre id="apiResult2" class="api-result"></pre>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="learning-notes" id="learning">
+            <h3>🎓 What you'll learn:</h3>
+            <div class="learning-grid">
+                <div class="learning-item">
+                    <h4>🖥️ Server-Side Development</h4>
+                    <ul>
+                        <li>Setting up Express.js server</li>
+                        <li>Middleware configuration</li>
+                        <li>Request/response handling</li>
+                        <li>Static file serving</li>
+                    </ul>
+                </div>
+                
+                <div class="learning-item">
+                    <h4>🗄️ Database Integration</h4>
+                    <ul>
+                        <li>SQLite database setup</li>
+                        <li>SQL queries and operations</li>
+                        <li>Database schema design</li>
+                        <li>CRUD operations</li>
+                    </ul>
+                </div>
+                
+                <div class="learning-item">
+                    <h4>🌐 RESTful API Design</h4>
+                    <ul>
+                        <li>REST principles and conventions</li>
+                        <li>JSON API responses</li>
+                        <li>HTTP status codes</li>
+                        <li>Error handling patterns</li>
+                    </ul>
+                </div>
+                
+                <div class="learning-item">
+                    <h4>🔄 Full-Stack Integration</h4>
+                    <ul>
+                        <li>Frontend-backend communication</li>
+                        <li>Data validation</li>
+                        <li>State management</li>
+                        <li>User experience patterns</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="tech-stack">
+                <h4>🛠️ Technology Stack</h4>
+                <div class="tech-items">
+                    <span class="tech-item">Node.js</span>
+                    <span class="tech-item">Express.js</span>
+                    <span class="tech-item">SQLite</span>
+                    <span class="tech-item">Vanilla JavaScript</span>
+                    <span class="tech-item">RESTful APIs</span>
+                    <span class="tech-item">SQL</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

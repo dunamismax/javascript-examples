@@ -1,0 +1,31 @@
+{
+  "name": "blog-platform",
+  "version": "1.0.0",
+  "description": "A full-stack blog platform demonstrating Express.js, SQLite, and server-side development",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "concurrently \"node server.js\" \"esbuild src/js/main.js --bundle --outfile=public/js/main.js --watch\"",
+    "build": "esbuild src/js/main.js --bundle --outfile=public/js/main.js --minify",
+    "init-db": "node database/init.js",
+    "seed-db": "node database/seed.js",
+    "clean": "rm -rf public/js && rm -f database/blog.db"
+  },
+  "keywords": [
+    "javascript",
+    "nodejs",
+    "express",
+    "sqlite",
+    "blog",
+    "full-stack",
+    "crud"
+  ],
+  "dependencies": {
+    "express": "^4.18.0",
+    "sqlite3": "^5.1.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.0",
+    "concurrently": "^8.2.0"
+  }
+}

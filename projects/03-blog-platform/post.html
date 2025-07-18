@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post - Blog Platform</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <div class="header-content">
+                <h1>📝 JavaScript Blog Platform</h1>
+                
+                <nav class="main-nav">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/create" class="nav-link">Write Post</a>
+                    <a href="/#learning" class="nav-link">Learning Guide</a>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- Loading State -->
+            <section id="loadingState" class="loading-section">
+                <div class="loading-spinner"></div>
+                <p>Loading post...</p>
+            </section>
+
+            <!-- Error State -->
+            <section id="errorState" class="error-section hidden">
+                <div class="error-content">
+                    <div class="error-icon">⚠️</div>
+                    <h3>Post Not Found</h3>
+                    <p id="errorMessage">The requested post could not be found.</p>
+                    <a href="/" class="btn btn-primary">Back to Home</a>
+                </div>
+            </section>
+
+            <!-- Post Content -->
+            <article id="postContent" class="post-article hidden">
+                <header class="post-header">
+                    <h1 id="postTitle">Post Title</h1>
+                    <div class="post-meta">
+                        <span class="post-author">By <strong id="postAuthor">Author</strong></span>
+                        <span class="post-date" id="postDate">Date</span>
+                        <span class="post-comments-count" id="postCommentsCount">0 comments</span>
+                    </div>
+                </header>
+
+                <div class="post-content">
+                    <div id="postBody" class="post-body">
+                        Post content will be loaded here...
+                    </div>
+                </div>
+
+                <footer class="post-footer">
+                    <div class="post-actions">
+                        <a href="/" class="btn btn-secondary">← Back to Posts</a>
+                        <button id="sharePost" class="btn btn-outline">Share Post</button>
+                    </div>
+                </footer>
+            </article>
+
+            <!-- Comments Section -->
+            <section id="commentsSection" class="comments-section hidden">
+                <header class="comments-header">
+                    <h2>💬 Comments</h2>
+                    <div class="comments-stats">
+                        <span id="commentsCount">0 comments</span>
+                    </div>
+                </header>
+
+                <!-- Add Comment Form -->
+                <div class="add-comment-form">
+                    <h3>Leave a Comment</h3>
+                    <form id="commentForm" class="comment-form">
+                        <div class="form-group">
+                            <label for="commentAuthor">Your Name:</label>
+                            <input type="text" id="commentAuthor" name="author" required maxlength="50" 
+                                   placeholder="Enter your name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="commentContent">Comment:</label>
+                            <textarea id="commentContent" name="content" required 
+                                      minlength="5" maxlength="500" rows="4"
+                                      placeholder="Share your thoughts..."></textarea>
+                            <div class="char-counter">
+                                <span id="charCount">0</span>/500 characters
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Post Comment</button>
+                            <button type="reset" class="btn btn-outline">Clear</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Comments List -->
+                <div id="commentsList" class="comments-list">
+                    <!-- Comments will be populated by JavaScript -->
+                </div>
+
+                <!-- No Comments State -->
+                <div id="noComments" class="no-comments hidden">
+                    <div class="no-comments-icon">💬</div>
+                    <h3>No comments yet</h3>
+                    <p>Be the first to share your thoughts on this post!</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/post.js"></script>
+</body>
+</html>
