@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/images/js-learning.png" alt="js-examples Logo" width="400" />
+  <img src="/images/js-evolution.jpeg" alt="js-games Logo" width="400" />
 </p>
 
 <p align="center">
@@ -34,15 +34,15 @@ This monorepo showcases a comprehensive JavaScript learning path - engineered to
 
 ## Tech Stack
 
-| Layer                 | Technology                                                                        | Purpose                                     |
-| --------------------- | --------------------------------------------------------------------------------- | ------------------------------------------- |
-| **Frontend Logic**    | [Vanilla JavaScript](http://vanilla-js.com/)                                     | Pure DOM manipulation and browser APIs      |
-| **Build System**      | [esbuild](https://esbuild.github.io/)                                            | Lightning-fast bundling and optimization    |
-| **Backend Framework** | [Express.js](https://expressjs.com/)                                             | Minimalist web framework for Node.js        |
-| **Database**          | [SQLite](https://www.sqlite.org/)                                                | Self-contained, serverless SQL database     |
-| **Database Driver**   | [sqlite3](https://github.com/TryGhost/node-sqlite3)                              | Direct communication with SQLite            |
-| **Styling**           | Vanilla CSS                                                                       | Modern CSS with Flexbox and Grid           |
-| **Package Manager**   | [npm](https://www.npmjs.com/)                                                    | Standard Node.js package management         |
+| Layer                 | Technology                                          | Purpose                                  |
+| --------------------- | --------------------------------------------------- | ---------------------------------------- |
+| **Frontend Logic**    | [Vanilla JavaScript](http://vanilla-js.com/)        | Pure DOM manipulation and browser APIs   |
+| **Build System**      | [esbuild](https://esbuild.github.io/)               | Lightning-fast bundling and optimization |
+| **Backend Framework** | [Express.js](https://expressjs.com/)                | Minimalist web framework for Node.js     |
+| **Database**          | [SQLite](https://www.sqlite.org/)                   | Self-contained, serverless SQL database  |
+| **Database Driver**   | [sqlite3](https://github.com/TryGhost/node-sqlite3) | Direct communication with SQLite         |
+| **Styling**           | Vanilla CSS                                         | Modern CSS with Flexbox and Grid         |
+| **Package Manager**   | [npm](https://www.npmjs.com/)                       | Standard Node.js package management      |
 
 ## Quick Start
 
@@ -84,6 +84,7 @@ This monorepo showcases a comprehensive JavaScript learning path - engineered to
 A feature-complete todo application that teaches fundamental JavaScript concepts.
 
 **What You'll Learn:**
+
 - Creating, modifying, and removing DOM elements
 - Event handling and delegation patterns
 - Browser localStorage for data persistence
@@ -92,6 +93,7 @@ A feature-complete todo application that teaches fundamental JavaScript concepts
 - Input validation and user experience
 
 **Key Features:**
+
 - ✅ Add, edit, and delete todos
 - ✅ Mark todos as complete/incomplete
 - ✅ Filter todos (All, Active, Completed)
@@ -100,6 +102,7 @@ A feature-complete todo application that teaches fundamental JavaScript concepts
 - ✅ Keyboard shortcuts and accessibility
 
 **Run the Project:**
+
 ```bash
 cd projects/01-todo-app
 npm run dev
@@ -113,6 +116,7 @@ npm run dev
 A comprehensive weather application demonstrating modern JavaScript async patterns.
 
 **What You'll Learn:**
+
 - Making HTTP requests with fetch()
 - Async/await for handling asynchronous operations
 - Geolocation API for location services
@@ -122,6 +126,7 @@ A comprehensive weather application demonstrating modern JavaScript async patter
 - State management for loading/error states
 
 **Key Features:**
+
 - ✅ Real-time weather data from OpenWeatherMap API
 - ✅ 5-day weather forecast with daily summaries
 - ✅ Geolocation-based weather lookup
@@ -132,6 +137,7 @@ A comprehensive weather application demonstrating modern JavaScript async patter
 - ✅ Responsive design with glassmorphism UI
 
 **Run the Project:**
+
 ```bash
 cd projects/02-weather-dashboard
 npm run dev
@@ -145,6 +151,7 @@ npm run dev
 A complete blogging platform demonstrating full-stack JavaScript development.
 
 **What You'll Learn:**
+
 - Setting up Express.js server with middleware
 - RESTful API design and implementation
 - Database integration with SQLite
@@ -155,6 +162,7 @@ A complete blogging platform demonstrating full-stack JavaScript development.
 - Security considerations and best practices
 
 **Key Features:**
+
 - ✅ Complete blog with posts and comments
 - ✅ RESTful API with proper HTTP methods
 - ✅ SQLite database with relational design
@@ -165,6 +173,7 @@ A complete blogging platform demonstrating full-stack JavaScript development.
 - ✅ Database seeding with sample content
 
 **Run the Project:**
+
 ```bash
 cd projects/03-blog-platform
 npm run init-db  # Initialize database
@@ -180,6 +189,7 @@ npm run dev      # Start server
 A production-ready real-time chat application showcasing advanced JavaScript development concepts.
 
 **What You'll Learn:**
+
 - WebSocket server implementation and client management
 - JWT authentication with token refresh
 - Real-time bidirectional communication patterns
@@ -190,6 +200,7 @@ A production-ready real-time chat application showcasing advanced JavaScript dev
 - State management for real-time applications
 
 **Key Features:**
+
 - ✅ Real-time messaging with WebSocket connections
 - ✅ JWT authentication with secure session management
 - ✅ Multiple chat rooms with role-based access
@@ -202,6 +213,7 @@ A production-ready real-time chat application showcasing advanced JavaScript dev
 - ✅ Production-ready security features
 
 **Run the Project:**
+
 ```bash
 cd projects/04-chat-platform
 npm run init-db  # Initialize database
@@ -252,24 +264,28 @@ npm test           # Run comprehensive test suite
 ### Learning Applications (`projects/`)
 
 **01-todo-app**
+
 - Vanilla JavaScript with localStorage persistence
 - Modern CSS with responsive design
 - Event delegation and state management patterns
 - Input validation and user experience focus
 
 **02-weather-dashboard**
+
 - API integration with error handling
 - Async/await patterns and Promise management
 - Browser APIs (Geolocation, localStorage)
 - Real-time data updates and caching
 
 **03-blog-platform**
+
 - Full-stack Express.js application
 - SQLite database with proper schema design
 - RESTful API with CRUD operations
 - Frontend-backend integration patterns
 
 **04-chat-platform**
+
 - Real-time WebSocket communication
 - JWT authentication and session management
 - Complex multi-table database relationships
@@ -279,6 +295,7 @@ npm test           # Run comprehensive test suite
 ### Shared Configurations
 
 **Root Level**
+
 - Workspace configuration for monorepo management
 - Shared dependencies and build tools
 - ESLint and development tooling
@@ -287,6 +304,7 @@ npm test           # Run comprehensive test suite
 ## Learning Path Progression
 
 ### Phase 1: Frontend Fundamentals (Todo App)
+
 1. **DOM Manipulation** - Creating and modifying elements
 2. **Event Handling** - User interactions and delegation
 3. **Local Storage** - Browser data persistence
@@ -294,6 +312,7 @@ npm test           # Run comprehensive test suite
 5. **State Management** - Application state in vanilla JS
 
 ### Phase 2: API Integration (Weather Dashboard)
+
 6. **Fetch API** - Making HTTP requests
 7. **Async/Await** - Modern asynchronous programming
 8. **Error Handling** - Graceful failure management
@@ -301,6 +320,7 @@ npm test           # Run comprehensive test suite
 10. **Real-time Updates** - Dynamic content and state
 
 ### Phase 3: Full-Stack Development (Blog Platform)
+
 11. **Server Setup** - Express.js configuration and middleware
 12. **Database Design** - SQL schema and relationships
 13. **RESTful APIs** - HTTP methods and status codes
@@ -309,6 +329,7 @@ npm test           # Run comprehensive test suite
 16. **Production Deployment** - Build optimization and deployment
 
 ### Phase 4: Real-time Applications (Chat Platform)
+
 17. **WebSocket Communication** - Real-time bidirectional messaging
 18. **Advanced Authentication** - JWT tokens and session management
 19. **Complex State Management** - Multi-room real-time state
@@ -326,12 +347,10 @@ const response = await fetch(`/api/weather/${cityName}`);
 const weatherData = await response.json();
 
 // Handle geolocation
-navigator.geolocation.getCurrentPosition(
-  (position) => {
-    const { latitude, longitude } = position.coords;
-    fetchWeatherByCoords(latitude, longitude);
-  }
-);
+navigator.geolocation.getCurrentPosition((position) => {
+  const { latitude, longitude } = position.coords;
+  fetchWeatherByCoords(latitude, longitude);
+});
 ```
 
 ### Blog Platform RESTful API
@@ -347,7 +366,7 @@ GET /api/posts/:slug
 POST /api/posts
 {
   "title": "My Blog Post",
-  "author": "John Doe", 
+  "author": "John Doe",
   "content": "Post content here..."
 }
 
@@ -374,6 +393,7 @@ POST /api/posts/:slug/comments
 ### After Completing This Repository
 
 **Frontend Development:**
+
 - Master DOM manipulation and event handling
 - Understand modern JavaScript ES6+ features
 - Build responsive, accessible user interfaces
@@ -381,6 +401,7 @@ POST /api/posts/:slug/comments
 - Implement client-side state management
 
 **Backend Development:**
+
 - Set up and configure Express.js servers
 - Design and implement RESTful APIs
 - Work with SQL databases and relationships
@@ -388,6 +409,7 @@ POST /api/posts/:slug/comments
 - Understand server-side security principles
 
 **Full-Stack Integration:**
+
 - Connect frontend and backend systems
 - Design efficient data flows
 - Implement real-time features
@@ -397,6 +419,7 @@ POST /api/posts/:slug/comments
 ## Best Practices Demonstrated
 
 ### Code Quality
+
 - Comprehensive error handling patterns
 - Input validation on client and server
 - Security best practices (XSS prevention, SQL injection)
@@ -404,6 +427,7 @@ POST /api/posts/:slug/comments
 - Accessible and semantic HTML
 
 ### Development Workflow
+
 - Monorepo management with workspaces
 - Build automation with esbuild
 - Database migrations and seeding
@@ -411,6 +435,7 @@ POST /api/posts/:slug/comments
 - Code documentation and comments
 
 ### Architecture Patterns
+
 - Separation of concerns
 - RESTful API design
 - Database normalization
@@ -420,17 +445,20 @@ POST /api/posts/:slug/comments
 ## Extending the Projects
 
 ### Beginner Extensions
+
 1. **Todo Categories** - Add category system with color coding
 2. **Weather Alerts** - Implement severe weather notifications
 3. **Blog Search** - Add search functionality to blog platform
 
 ### Intermediate Extensions
+
 4. **User Authentication** - Add login/logout functionality
 5. **Real-time Features** - WebSocket integration for live updates
 6. **Image Uploads** - File handling and storage
 7. **Email Notifications** - SMTP integration for alerts
 
 ### Advanced Extensions
+
 8. **Mobile Apps** - Convert to Progressive Web Apps
 9. **API Rate Limiting** - Implement request throttling
 10. **Microservices** - Split into separate services
@@ -450,18 +478,21 @@ POST /api/posts/:slug/comments
 ### Common Issues
 
 **Installation Problems:**
+
 ```bash
 rm -rf node_modules projects/*/node_modules
 npm install
 ```
 
 **Build Errors:**
+
 ```bash
 npm run clean
 npm run build
 ```
 
 **Database Issues (Blog Platform):**
+
 ```bash
 cd projects/03-blog-platform
 npm run clean
@@ -470,6 +501,7 @@ npm run seed-db
 ```
 
 **API Key Setup (Weather Dashboard):**
+
 - Get free API key from [OpenWeatherMap](https://openweathermap.org/api)
 - Replace `YOUR_API_KEY_HERE` in `src/js/main.js`
 - Or use the included mock data mode for learning
@@ -501,7 +533,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ---
 
 <p align="center">
-  <img src="/images/js-crown.png" alt="JavaScript Learning" width="400" />
+  <img src="/images/js-yellow-crown.jpg" alt="JavaScript Games" width="400" />
 </p>
 
 <p align="center">
