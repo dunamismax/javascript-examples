@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://github.com/dunamismax/js-examples">
-    <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=24&pause=1000&color=F7DF1E&center=true&vCenter=true&width=800&lines=JavaScript+Learning+Monorepo;Vanilla+JS+%2B+Express.js+%2B+SQLite;Progressive+Learning+Path;Todo+App+%2B+Weather+Dashboard+%2B+Blog+Platform;From+Beginner+to+Full-Stack+Developer" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=24&pause=1000&color=F7DF1E&center=true&vCenter=true&width=800&lines=JavaScript+Learning+Monorepo;26+Progressive+Fundamentals+Scripts;4+Real-World+Projects;From+Beginner+to+Full-Stack+Developer;Complete+Learning+Path" alt="Typing SVG" />
   </a>
 </p>
 
@@ -21,7 +21,13 @@
 
 ## JavaScript Learning Monorepo
 
-A comprehensive learning path from DOM manipulation to full-stack development using Vanilla JS, Express.js, and SQLite.
+A comprehensive learning path from JavaScript fundamentals to full-stack development using Vanilla JS, Express.js, and SQLite. Features a progressive curriculum with 26+ hands-on scripts and 4 complete projects.
+
+### Learning Tracks
+
+- **Fundamentals**: 26 progressive scripts from basics to advanced concepts
+- **Projects**: 4 real-world applications with increasing complexity
+- **Full-Stack**: Complete development workflow and modern practices
 
 ### Tech Stack
 
@@ -35,10 +41,53 @@ A comprehensive learning path from DOM manipulation to full-stack development us
 ```bash
 git clone https://github.com/dunamismax/js-examples.git
 cd js-examples
+
+# Option 1: Start with Fundamentals (Recommended)
+cd fundamentals
+node 01-hello-world.js  # Begin the progressive learning path
+
+# Option 2: Run Full Projects
 npm install && npm run build && npm run dev
 ```
 
-## Projects
+## 📚 JavaScript Fundamentals
+
+**Progressive learning path with 26 comprehensive scripts**
+
+Start here to build a solid foundation in JavaScript from basic syntax to advanced concepts.
+
+```bash
+cd fundamentals
+node 01-hello-world.js  # Start your journey
+```
+
+### 🟢 **Basics (01-10)** - Core JavaScript
+
+- Variables, data types, operators
+- Conditionals, loops, functions
+- Arrays, objects, strings
+- Error handling fundamentals
+
+### 🟡 **Intermediate (11-20)** - JavaScript Features
+
+- Scope, closures, context
+- Prototypes, DOM manipulation
+- Events, async programming
+- Fetch API, storage, ES6+ features
+
+### 🔴 **Advanced (21-26)** - Expert Topics
+
+- Classes, OOP, regex patterns
+- JSON, dates, browser APIs
+- Performance optimization
+
+[**View Complete Fundamentals Guide →**](./fundamentals/README.md)
+
+---
+
+## Real-World Projects
+
+**4 progressively complex applications to apply your skills**
 
 ### 1. Todo App (Beginner)
 
@@ -83,12 +132,32 @@ npm run clean   # Clean artifacts
 npm test        # Run tests (chat platform)
 ```
 
-## Learning Path
+## Complete Learning Path
 
-1. **Frontend Fundamentals**: DOM, events, localStorage
-2. **API Integration**: Fetch, async/await, error handling
-3. **Full-Stack**: Express.js, SQLite, RESTful APIs
-4. **Real-time**: WebSockets, authentication, testing
+### **Phase 1: Master the Fundamentals**
+
+Work through the `fundamentals/` directory (26 scripts)
+
+- Build core JavaScript knowledge
+- Learn modern ES6+ features
+- Practice with interactive examples
+
+### **Phase 2: Apply with Projects**
+
+Build real applications in the `projects/` directory
+
+- Start simple with Todo App
+- Progress to complex Chat Platform
+- Learn full-stack development
+
+### **Phase 3: Advanced Concepts**
+
+- Performance optimization
+- Security best practices
+- Testing and debugging
+- Design patterns
+
+**Recommended Timeline**: 4-8 weeks for complete mastery
 
 ## Contributing
 
