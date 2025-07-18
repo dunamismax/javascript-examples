@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Platform - Real-time Messaging</title>
+    <link rel="stylesheet" href="/css/bundle.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="ws://localhost:3000">
+    
+    <!-- Meta tags for SEO and social -->
+    <meta name="description" content="Modern real-time chat platform with WebSockets, authentication, and file sharing">
+    <meta name="author" content="JavaScript Learning Repository">
+    <meta property="og:title" content="Chat Platform - Real-time Messaging">
+    <meta property="og:description" content="Experience modern real-time communication with our WebSocket-powered chat platform">
+    <meta property="og:type" content="website">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-spinner"></div>
+        <p>Loading Chat Platform...</p>
+    </div>
+
+    <!-- Main Application Container -->
+    <div id="app" class="app hidden">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <h1 class="app-title">💬 Chat Platform</h1>
+                    <span class="app-subtitle">Real-time Messaging</span>
+                </div>
+                
+                <div class="header-actions">
+                    <div class="connection-status" id="connection-status">
+                        <span class="status-indicator disconnected"></span>
+                        <span class="status-text">Connecting...</span>
+                    </div>
+                    
+                    <div class="user-menu">
+                        <button class="user-avatar" id="user-menu-btn">
+                            <img id="user-avatar-img" src="/uploads/avatars/default.png" alt="User Avatar">
+                        </button>
+                        <div class="user-dropdown hidden" id="user-dropdown">
+                            <div class="user-info">
+                                <strong id="user-display-name">Loading...</strong>
+                                <small id="user-email">loading@example.com</small>
+                            </div>
+                            <hr>
+                            <button class="dropdown-item" id="profile-btn">
+                                👤 Profile Settings
+                            </button>
+                            <button class="dropdown-item" id="theme-toggle-btn">
+                                🌙 Dark Mode
+                            </button>
+                            <hr>
+                            <button class="dropdown-item logout-btn" id="logout-btn">
+                                🚪 Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Chat Interface -->
+        <main class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <h2>Rooms</h2>
+                    <button class="btn-icon" id="create-room-btn" title="Create Room">
+                        ➕
+                    </button>
+                </div>
+                
+                <div class="rooms-list" id="rooms-list">
+                    <!-- Rooms will be populated here -->
+                    <div class="loading-placeholder">
+                        <div class="skeleton-loader"></div>
+                        <div class="skeleton-loader"></div>
+                        <div class="skeleton-loader"></div>
+                    </div>
+                </div>
+
+                <div class="sidebar-footer">
+                    <div class="online-users">
+                        <h3>Online Now</h3>
+                        <div class="online-users-list" id="online-users-list">
+                            <!-- Online users will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Chat Area -->
+            <section class="chat-area">
+                <!-- Chat Header -->
+                <div class="chat-header" id="chat-header">
+                    <div class="room-info">
+                        <h2 id="current-room-name">Select a room to start chatting</h2>
+                        <p id="current-room-description">Choose a room from the sidebar to begin messaging</p>
+                    </div>
+                    
+                    <div class="chat-actions">
+                        <button class="btn-icon" id="room-members-btn" title="Room Members">
+                            👥
+                        </button>
+                        <button class="btn-icon" id="search-messages-btn" title="Search Messages">
+                            🔍
+                        </button>
+                        <button class="btn-icon" id="room-settings-btn" title="Room Settings">
+                            ⚙️
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Messages Container -->
+                <div class="messages-container" id="messages-container">
+                    <div class="welcome-message" id="welcome-message">
+                        <div class="welcome-content">
+                            <h3>👋 Welcome to Chat Platform!</h3>
+                            <p>Select a room from the sidebar to start messaging with others.</p>
+                            <div class="feature-highlights">
+                                <div class="feature">
+                                    <span class="feature-icon">⚡</span>
+                                    <span>Real-time messaging</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">📁</span>
+                                    <span>File sharing</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">✏️</span>
+                                    <span>Message editing</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">💬</span>
+                                    <span>Reply to messages</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="messages-list hidden" id="messages-list">
+                        <!-- Messages will be populated here -->
+                    </div>
+                    
+                    <div class="typing-indicators" id="typing-indicators">
+                        <!-- Typing indicators will appear here -->
+                    </div>
+                </div>
+
+                <!-- Message Input -->
+                <div class="message-input-container" id="message-input-container">
+                    <div class="reply-context hidden" id="reply-context">
+                        <div class="reply-info">
+                            <span class="reply-label">Replying to</span>
+                            <span class="reply-username" id="reply-username"></span>
+                            <span class="reply-content" id="reply-content"></span>
+                        </div>
+                        <button class="reply-cancel" id="reply-cancel-btn">✕</button>
+                    </div>
+                    
+                    <div class="input-area">
+                        <button class="btn-icon attach-btn" id="attach-file-btn" title="Attach File">
+                            📎
+                        </button>
+                        
+                        <div class="message-input-wrapper">
+                            <textarea 
+                                id="message-input" 
+                                placeholder="Type your message..." 
+                                rows="1"
+                                maxlength="2000"
+                                disabled
+                            ></textarea>
+                            <div class="input-counter">
+                                <span id="char-counter">0</span>/2000
+                            </div>
+                        </div>
+                        
+                        <button class="btn-primary send-btn" id="send-btn" disabled>
+                            📤 Send
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Authentication Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <div class="auth-container">
+                <div class="auth-header">
+                    <h2 id="auth-title">Welcome to Chat Platform</h2>
+                    <p id="auth-subtitle">Please sign in to continue</p>
+                </div>
+
+                <div class="auth-tabs">
+                    <button class="auth-tab active" data-tab="login">Login</button>
+                    <button class="auth-tab" data-tab="register">Register</button>
+                </div>
+
+                <!-- Login Form -->
+                <form id="login-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="login-username">Username or Email</label>
+                        <input type="text" id="login-username" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Sign In</button>
+                </form>
+
+                <!-- Register Form -->
+                <form id="register-form" class="auth-form hidden">
+                    <div class="form-group">
+                        <label for="register-username">Username</label>
+                        <input type="text" id="register-username" required minlength="3" maxlength="50">
+                        <small>3-50 characters, letters, numbers, and underscores only</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-password">Password</label>
+                        <input type="password" id="register-password" required minlength="6">
+                        <small>Minimum 6 characters</small>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Create Account</button>
+                </form>
+
+                <div class="auth-footer">
+                    <div class="demo-accounts">
+                        <h4>Demo Accounts</h4>
+                        <div class="demo-account-list">
+                            <button class="demo-account-btn" data-username="alice_demo" data-password="demo123">
+                                👩‍💻 Alice Demo
+                            </button>
+                            <button class="demo-account-btn" data-username="bob_demo" data-password="demo123">
+                                👨‍💻 Bob Demo
+                            </button>
+                            <button class="demo-account-btn" data-username="admin" data-password="admin123">
+                                👑 Admin
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="auth-error hidden" id="auth-error">
+                    <span class="error-icon">⚠️</span>
+                    <span class="error-message" id="auth-error-message"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Room Members Modal -->
+    <div id="room-members-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Room Members</h3>
+                <button class="modal-close" data-modal="room-members-modal">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="members-list" id="room-members-list">
+                    <!-- Room members will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Toast -->
+    <div id="error-toast" class="toast error hidden">
+        <span class="toast-icon">⚠️</span>
+        <span class="toast-message" id="error-toast-message"></span>
+        <button class="toast-close" onclick="hideToast('error-toast')">✕</button>
+    </div>
+
+    <!-- Success Toast -->
+    <div id="success-toast" class="toast success hidden">
+        <span class="toast-icon">✅</span>
+        <span class="toast-message" id="success-toast-message"></span>
+        <button class="toast-close" onclick="hideToast('success-toast')">✕</button>
+    </div>
+
+    <!-- Hidden file input -->
+    <input type="file" id="file-input" style="display: none;" accept="image/*,.pdf,.doc,.docx,.txt">
+
+    <!-- Scripts -->
+    <script src="/js/bundle.js"></script>
+</body>
+</html>

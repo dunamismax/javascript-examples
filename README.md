@@ -173,6 +173,43 @@ npm run dev      # Start server
 # Open http://localhost:3000
 ```
 
+### Project 4: Chat Platform (Expert Level)
+
+**🎯 Learning Focus:** Real-time Communication, Advanced Authentication, WebSockets, Testing
+
+A production-ready real-time chat application showcasing advanced JavaScript development concepts.
+
+**What You'll Learn:**
+- WebSocket server implementation and client management
+- JWT authentication with token refresh
+- Real-time bidirectional communication patterns
+- Complex database relationships and indexing
+- Advanced security practices and rate limiting
+- File upload handling and validation
+- Comprehensive testing strategies
+- State management for real-time applications
+
+**Key Features:**
+- ✅ Real-time messaging with WebSocket connections
+- ✅ JWT authentication with secure session management
+- ✅ Multiple chat rooms with role-based access
+- ✅ Message threading with reply functionality
+- ✅ Typing indicators and presence tracking
+- ✅ File sharing with security validation
+- ✅ Message editing and deletion
+- ✅ Connection recovery and offline handling
+- ✅ Comprehensive test suite
+- ✅ Production-ready security features
+
+**Run the Project:**
+```bash
+cd projects/04-chat-platform
+npm run init-db  # Initialize database
+npm run seed-db  # Add sample data
+npm run dev      # Start server
+# Open http://localhost:3000
+```
+
 ## Development Commands
 
 ### Essential Commands
@@ -190,15 +227,24 @@ npm run clean      # Clean build artifacts and databases
 cd projects/01-todo-app && npm run dev         # Run Todo App only
 cd projects/02-weather-dashboard && npm run dev # Run Weather Dashboard only
 cd projects/03-blog-platform && npm run dev    # Run Blog Platform only
+cd projects/04-chat-platform && npm run dev    # Run Chat Platform only
 ```
 
-### Blog Platform Database Commands
+### Database Commands
 
 ```bash
+# Blog Platform
 cd projects/03-blog-platform
 npm run init-db    # Create database and tables
 npm run seed-db    # Add sample blog posts and comments
 npm run clean      # Remove database and build files
+
+# Chat Platform
+cd projects/04-chat-platform
+npm run init-db    # Create database schema
+npm run seed-db    # Add sample users and chat rooms
+npm run clean      # Remove database and build files
+npm test           # Run comprehensive test suite
 ```
 
 ## Project Architecture
@@ -222,6 +268,13 @@ npm run clean      # Remove database and build files
 - SQLite database with proper schema design
 - RESTful API with CRUD operations
 - Frontend-backend integration patterns
+
+**04-chat-platform**
+- Real-time WebSocket communication
+- JWT authentication and session management
+- Complex multi-table database relationships
+- Advanced security and testing practices
+- Production-ready deployment patterns
 
 ### Shared Configurations
 
@@ -254,6 +307,14 @@ npm run clean      # Remove database and build files
 14. **CRUD Operations** - Create, Read, Update, Delete
 15. **Security** - Input validation and sanitization
 16. **Production Deployment** - Build optimization and deployment
+
+### Phase 4: Real-time Applications (Chat Platform)
+17. **WebSocket Communication** - Real-time bidirectional messaging
+18. **Advanced Authentication** - JWT tokens and session management
+19. **Complex State Management** - Multi-room real-time state
+20. **Security Best Practices** - Rate limiting and input sanitization
+21. **Testing Strategies** - Unit, integration, and E2E testing
+22. **Production Deployment** - Scalable real-time architecture
 
 ## API Documentation
 

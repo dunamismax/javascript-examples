@@ -1,0 +1,43 @@
+{
+  "name": "04-chat-platform",
+  "version": "1.0.0",
+  "description": "Real-time chat application with WebSockets, authentication, and file sharing",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "init-db": "node database/init.js",
+    "seed-db": "node database/seed.js",
+    "test": "node tests/run-tests.js",
+    "clean": "rm -rf database/chat.db public/uploads/* dist/*",
+    "build": "esbuild src/css/styles.css --bundle --outfile=public/css/bundle.css && esbuild src/js/main.js --bundle --outfile=public/js/bundle.js"
+  },
+  "keywords": [
+    "chat",
+    "websockets",
+    "real-time",
+    "authentication",
+    "file-upload",
+    "express",
+    "sqlite"
+  ],
+  "dependencies": {
+    "express": "^4.18.2",
+    "ws": "^8.14.2",
+    "sqlite3": "^5.1.6",
+    "bcrypt": "^5.1.1",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "express-rate-limit": "^7.1.5",
+    "helmet": "^7.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.8"
+  },
+  "author": "JavaScript Learning Repository",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
