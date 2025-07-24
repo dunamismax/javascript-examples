@@ -273,12 +273,6 @@ npm run start    # Start production servers
 
 **Educational Standards:** Maintains clear progression, comprehensive comments, and practical examples suitable for learners
 
-## Author
-
-<img src="https://gravatar.com/nachounabashed3164d5c433" alt="dunamismax" width="80" style="border-radius: 50%;" />
-
-**dunamismax** - Creator and maintainer of this JavaScript Learning Monorepo.
-
 ## License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
